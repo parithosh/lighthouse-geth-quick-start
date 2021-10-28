@@ -13,9 +13,8 @@ services:
     image: parithoshj/lighthouse:merge-mainnetconfig-09a5d62
     container_name: lighthouse_validator
     volumes:
-      - ./validator_data:/validator_data
       - ./custom_config_data:/custom_config_data
       - ./validator_keys:/validator_keys
     command: >
-      lighthouse --testnet-dir="/custom_config_data" vc --validators-dir="/validator_data/validators" --secrets-dir="/validator_data/secrets" --init-slashing-protection --server=http://127.0.0.1:4000 --graffiti="hi mom" --http --http-port=4002
+      lighthouse --testnet-dir="/custom_config_data" vc --validators-dir="/validator_keys/validators" --secrets-dir="/validator_keys/secrets" --init-slashing-protection --server=http://127.0.0.1:4000 --graffiti="hi mom" --http --http-port=4002
     network_mode: host
