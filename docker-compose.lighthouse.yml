@@ -2,6 +2,7 @@ version: "3.4"
 services:
   lighthouse_beacon:
     image: ethpandaops/lighthouse:boxed-blobs-d534ac0
+    restart: on-failure
     container_name: lighthouse_beacon
     volumes:
       - ./beacon_data:/consensus_data
